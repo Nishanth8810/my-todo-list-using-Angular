@@ -1,5 +1,6 @@
 <div class="container">
-  <h3>My to-do List</h3>
+  <h3 style="display: flex;justify-content: center;">My <span 
+    style="font-weight: 900;color: goldenrod;margin-left: 5px;margin-right: 5px;">TODO</span> List</h3>
   <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm" >
     <div class="form-group" >
       <label for="task">Add task</label>
@@ -9,27 +10,46 @@
 
     </div>
 
-    <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid" >Submit</button>
+    <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid" style="margin-bottom: 10px;" >Submit</button>
   </form>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th scope="col" >Task</th>
-        <th scope="col">Action</th>
-        <th scope="col">Delete</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let t of task; index as i ">
-        <td class="taskTitle long-text-cell"><p><u>{{ t.taskName }}</u></p></td>
-        <td><button class="btn btn success" style="background-color: rgb(0, 189, 0);"><mat-icon>done_outline</mat-icon></button></td>
-        <td>
-          <button class="btn btn-danger" (click)="delete(i)">
-            <mat-icon>delete</mat-icon>
-          </button>
-        </td>
-      </tr>
-      
-    </tbody>
-  </table>
+  <div class="scrollable-container2">
+    <table *ngIf="task.length>0" class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col" >Task</th>
+          <th scope="col">Action</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let t of task; index as i ">
+          <td class="taskTitle long-text-cell"><p><u>{{ t.taskName }}</u></p></td>
+          <td><button class="btn btn success" style="background-color: rgb(0, 189, 0);" (click)="completed(i)" ><mat-icon>done_outline</mat-icon></button></td>
+          <td>
+            <button class="btn btn-danger" (click)="delete(i)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+  
+  <div class=" scrollable-container" >
+    <button class="btn btn-secondary dropdown-toggle"
+     type="button"
+      id="dropdownMenu2" 
+      data-toggle="dropdown" 
+      aria-haspopup="true"
+       aria-expanded="false"
+      style="background-color:transparent;" >
+   Completed ({{ taskCompleted.length }})
+    </button>
+    <ul>
+      <li class="ptag bullet-paragraph" *ngFor="let t of taskCompleted"><del>{{ t }}</del></li>
+    </ul>
+ 
+  </div>
+  
 </div>

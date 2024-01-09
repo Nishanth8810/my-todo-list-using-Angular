@@ -11,21 +11,34 @@ export class TodoListComponent implements OnInit {
 
 
 
-  task = [{ taskName: 'task1', status: false }]
+  task = [{ 
+    taskName: 'Go to gym'
+   },{
+      taskName:'Practice Leetcode'
+  },{
+    taskName:'Drink Water'
+  },
+{
+  taskName:'Walk for 10 min'
+}]
 
   delete(index: number): void {
     this.task.splice(index, 1)
   }
-
+    
+  taskCompleted:string[]=[];
+  
+  completed(index:number):void{
+    this.taskCompleted.push(this.task[index].taskName);
+    this.task.splice(index,1)
+  }
 
   constructor() {
 
   }
   onSubmit(form: NgForm) {
-
     this.task.push({
       taskName: form.controls['task'].value,
-      status: false
     })
     form.reset();
 
