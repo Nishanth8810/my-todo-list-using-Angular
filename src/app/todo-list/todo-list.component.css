@@ -2,6 +2,7 @@ h3{
   color:green;
 }
 .taskTitle{
+  
     font-weight: 600;
 }
 .long-text-cell {
@@ -9,6 +10,9 @@ h3{
   word-wrap: break-word;
   overflow-wrap: break-word;
   white-space: normal;
+}
+p{
+  margin-top: 10px;
 }
 .ptag{
   margin-top: 10px;
