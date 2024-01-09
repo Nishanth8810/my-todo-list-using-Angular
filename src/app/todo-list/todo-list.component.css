@@ -1,0 +1,13 @@
+h3{
+  color:green;
+}
+.taskTitle{
+    font-weight: 600  ;
+}
+
+.long-text-cell {
+  max-width: 150px; /* Set a maximum width to control the text length */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
