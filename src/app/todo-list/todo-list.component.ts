@@ -25,6 +25,15 @@ export class TodoListComponent implements OnInit {
   delete(index: number): void {
     this.task.splice(index, 1)
   }
+
+  celebrate(): void {
+    const button:any = document.querySelector('.celebration-button');
+    button.classList.add('celebrating');
+    setTimeout(() => {
+      button.classList.remove('celebrating');
+    }, 500);
+  }
+
     
   taskCompleted:string[]=[];
   

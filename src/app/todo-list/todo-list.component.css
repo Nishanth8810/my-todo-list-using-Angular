@@ -2,9 +2,12 @@ h3{
   color:green;
 }
 .taskTitle{
-  
     font-weight: 600;
 }
+body{
+  background-color: black;
+}
+
 .long-text-cell {
   max-width: 150px; 
   word-wrap: break-word;
@@ -14,12 +17,14 @@ h3{
 p{
   margin-top: 10px;
 }
+
 .ptag{
   margin-top: 10px;
   font-weight: 900;
   font-size: larger;
   color: rgb(90, 90, 90);
 }
+
 .bullet-paragraph {
   list-style-type: disc; 
   margin-left: 20px; 
@@ -30,11 +35,13 @@ p{
   overflow-y: auto;
   border: 1px solid #ccc;
 }
+
 .scrollable-container2 {
   max-height: 250px; 
   overflow-y: auto;
   border: 1px solid #ccc;
 }
+
 .table {
   width: 100%;
   border-collapse: collapse;
